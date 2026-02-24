@@ -1,5 +1,6 @@
 import re
-from textnode import TextNode, TextType
+from textnode import TextNode
+from node_types import TextType
 
 def split_nodes_delimiter(old_nodes, delimiter, text_type):
     new_nodes = []
@@ -9,7 +10,7 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
             continue
         node_split = []
         node_sections = node.text.split(delimiter)
-        if len(node_sections) < 2:
+        if len(node_sections) % 2 == 0:
             raise ValueError("invalid markdown, formatted section not closed")
         for i in range(len(node_sections)):
             if node_sections[i] == "":

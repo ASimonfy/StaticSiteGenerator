@@ -1,1 +1,1 @@
-python3 src/main.py "https://asimonfy.github.io/StaticSiteGenerator/"
+python3 src/main.py --base-path "https://asimonfy.github.io/StaticSiteGenerator/"

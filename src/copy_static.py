@@ -2,13 +2,16 @@ import os
 import shutil
 
 source_dir = "./static"
-target_dir = "./public"
+target_dir = "./docs"
 
-def copy_static():
-    if os.path.exists(target_dir):
-        shutil.rmtree(target_dir)
+def copy_static(base_path):
+
+    target_path = os.path.join(base_path, target_dir)
+
+    if os.path.exists(target_path):
+        shutil.rmtree(target_path)
     
-    copyFiles(source_dir, target_dir)
+    copyFiles(source_dir, target_path)
 
 def copyFiles(source_path, target_path):
     if not os.path.exists(target_path):
